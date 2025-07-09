@@ -2,7 +2,8 @@
 
 This repository contains three beginner-friendly web applications built using **Flask**, HTML, and CSS:
 
-🧠 Projects Overview
+
+
 ✅ 1. To-Do List
 Manage and organize your daily tasks. Add, mark complete, and delete tasks.
 
