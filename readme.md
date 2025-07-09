@@ -16,13 +16,6 @@ Generate a secure password by entering a desired length.
 Each app is self-contained with a clean UI, written in Python using the Flask framework.
 
 ---
-
-## 🚀 Live Demo (Optional)
-
-Host your own or deploy using [Vercel](https://vercel.com/) or [Railway](https://railway.app/).
-
----
-
 ## 📁 Project Structure
 
 project-root/
