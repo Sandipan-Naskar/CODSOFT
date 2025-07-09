@@ -1,0 +1,16 @@
+body {
+    font-family: Arial;
+    max-width: 500px;
+    margin: 30px auto;
+}
+.done {
+    text-decoration: line-through;
+    color: grey;
+}
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+    margin: 10px 0;
+}

@@ -1,0 +1,12 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 50px;
+}
+form {
+    display: inline-block;
+}
+input, select {
+    margin: 5px;
+    padding: 5px;
+}
