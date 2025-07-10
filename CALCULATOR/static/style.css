@@ -1,12 +1,80 @@
 body {
-    font-family: Arial;
-    text-align: center;
-    margin-top: 50px;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
 }
-form {
-    display: inline-block;
+
+.calculator {
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    width: 320px;
 }
-input, select {
-    margin: 5px;
-    padding: 5px;
+
+input[type="text"] {
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    background: #1e1e1e;
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 70px;
+    height: 60px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: #4e4e4e;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #666;
+}
+
+button[value="="] {
+    background-color: #f39c12;
+}
+
+button[value="="]:hover {
+    background-color: #e67e22;
+}
+
+button[value="AC"],
+button[value="C"] {
+    background-color: #c0392b;
+}
+
+button[value="AC"]:hover,
+button[value="C"]:hover {
+    background-color: #e74c3c;
+}
+
+.empty {
+    width: 70px;
+    height: 60px;
 }

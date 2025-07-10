@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Calculator</title>
+    <meta charset="UTF-8">
+    <title>Flask Calculator</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Simple Calculator</h1>
-    <form method="post">
-        <input type="number" name="num1" required step="any">
-        <select name="operation">
-            <option value="+">+</option>
-            <option value="-">−</option>
-            <option value="*">×</option>
-            <option value="/">÷</option>
-        </select>
-        <input type="number" name="num2" required step="any">
-        <button type="submit">Calculate</button>
-    </form>
-    {% if result != '' %}
-        <h2>Result: {{ result }}</h2>
-    {% endif %}
+    <div class="calculator">
+        <form method="POST">
+            <input type="text" name="display" value="{{ expression }}" readonly>
+            <div class="buttons">
+                {% for row in [
+                    ["AC", "C", "/", "*"],
+                    ["7", "8", "9", "-"],
+                    ["4", "5", "6", "+"],
+                    ["1", "2", "3", "="],
+                    ["0", ".", "", ""]
+                ] %}
+                    <div class="row">
+                        {% for btn in row %}
+                            {% if btn %}
+                                <button type="submit" name="btn" value="{{ btn }}">{{ btn }}</button>
+                            {% else %}
+                                <span class="empty"></span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,28 +1,31 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect, url_for
 
 app = Flask(__name__)
+app.secret_key = 'calc_secret'
 
-@app.route('/', methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def index():
-    result = ''
-    if request.method == "POST":
-        try:
-            num1 = float(request.form['num1'])
-            num2 = float(request.form['num2'])
-            op = request.form['operation']
-            if op == '+':
-                result = num1 + num2
-            elif op == '-':
-                result = num1 - num2
-            elif op == '*':
-                result = num1 * num2
-            elif op == '/':
-                result = num1 / num2 if num2 != 0 else 'Error (Divide by 0)'
-            else:
-                result = 'Invalid Operation'
-        except:
-            result = 'Invalid Input'
-    return render_template('index.html', result=result)
+    if "expression" not in session:
+        session["expression"] = ""
 
-if __name__ == '__main__':
+    if request.method == "POST":
+        btn = request.form["btn"]
+        
+        if btn == "C":
+            session["expression"] = session["expression"][:-1]
+        elif btn == "AC":
+            session["expression"] = ""
+        elif btn == "=":
+            try:
+                session["expression"] = str(eval(session["expression"]))
+            except:
+                session["expression"] = "Error"
+        else:
+            session["expression"] += btn
+
+        return redirect(url_for('index'))
+
+    return render_template("index.html", expression=session["expression"])
+
+if __name__ == "__main__":
     app.run(debug=True)

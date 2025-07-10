@@ -3,6 +3,7 @@
         "colorama",
         "dnspython",
         "dotenv",
+        "endfor",
         "itsdangerous",
         "pymongo",
         "stylesheet",
