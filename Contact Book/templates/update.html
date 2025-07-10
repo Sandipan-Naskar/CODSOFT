@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Contact</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Update Contact</h1>
+    <form method="post" class="form">
+        <input type="text" name="name" value="{{ contact.name }}" required>
+        <input type="text" name="phone" value="{{ contact.phone }}" required>
+        <input type="email" name="email" value="{{ contact.email }}">
+        <input type="text" name="address" value="{{ contact.address }}">
+        <button type="submit">Update</button>
+    </form>
+</div>
+</body>
+</html>
